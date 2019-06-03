@@ -13,7 +13,7 @@ https://www.ncbi.nlm.nih.gov/home/download/
 1.2 Download using python 
 https://pythonprogramming.net/ftp-transfers-python-ftplib/
 
-1.3 Create donwload/data sync configuration
+1.3 Create download/data sync configuration
 
 1.4 Create a unix cron job to automatically download
 
@@ -34,5 +34,3 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html
 
 4.1 Set up an EC2 VM
 4.2 Run Blast using EC2 VM with S3 data
-
-
