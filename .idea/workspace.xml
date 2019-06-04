@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84d9bb1a-d72e-489b-9de8-a16dd39f6d0c" name="Default" comment="exampleDownload.py searches for files from /blast/db that end in &quot;.gz&quot; and downloads them to local repository ~/bioda/database.&#10;-Andrew Zhang">
-      <change afterPath="$PROJECT_DIR$/src/exampleS3Upload.py" afterDir="false" />
+    <list default="true" id="84d9bb1a-d72e-489b-9de8-a16dd39f6d0c" name="Default" comment="Wrote a basic python program to upload &amp; sync ~/bioda/database with s3://andrew-zhang-backup-bucket.&#10;Added a comment with a similar line to download &amp; sync the above, for future use.&#10;-Andrew Zhang">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exampleS3Upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/exampleS3Upload.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/Documentation/phase_I_plan.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="431">
+              <first_editor relative-caret-position="666">
                 <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
               </first_editor>
               <second_editor />
@@ -25,11 +25,23 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/exampleDownload.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/exampleS3Upload.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+            <state relative-caret-position="18">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -65,8 +77,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="882" />
-    <option name="width" value="1038" />
+    <option name="x" value="-4" />
+    <option name="width" value="1928" />
     <option name="height" value="1010" />
   </component>
   <component name="ProjectView">
@@ -74,7 +86,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,6 +112,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,19 +221,25 @@
       <option name="project" value="LOCAL" />
       <updated>1559597216141</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Wrote a basic python program to upload &amp; sync ~/bioda/database with s3://andrew-zhang-backup-bucket.&#10;Added a comment with a similar line to download &amp; sync the above, for future use.&#10;-Andrew Zhang">
+      <created>1559605065430</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559605065430</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="0" width="1928" height="1014" extended-state="6" />
-    <editor active="true" />
+    <frame x="-4" y="0" width="1928" height="1010" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24986821" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32993197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -239,7 +257,8 @@
     <MESSAGE value="Updated README- Andrew Zhang" />
     <MESSAGE value="Updated README- Andrew Zhang&#10;(tried to un-bold some sentences)" />
     <MESSAGE value="exampleDownload.py searches for files from /blast/db that end in &quot;.gz&quot; and downloads them to local repository ~/bioda/database.&#10;-Andrew Zhang" />
-    <option name="LAST_COMMIT_MESSAGE" value="exampleDownload.py searches for files from /blast/db that end in &quot;.gz&quot; and downloads them to local repository ~/bioda/database.&#10;-Andrew Zhang" />
+    <MESSAGE value="Wrote a basic python program to upload &amp; sync ~/bioda/database with s3://andrew-zhang-backup-bucket.&#10;Added a comment with a similar line to download &amp; sync the above, for future use.&#10;-Andrew Zhang" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote a basic python program to upload &amp; sync ~/bioda/database with s3://andrew-zhang-backup-bucket.&#10;Added a comment with a similar line to download &amp; sync the above, for future use.&#10;-Andrew Zhang" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/exampleDownload.py">
@@ -255,7 +274,7 @@
     <entry file="file://$PROJECT_DIR$/Documentation/phase_I_plan.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="431">
+          <first_editor relative-caret-position="666">
             <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
           </first_editor>
           <second_editor />
@@ -264,8 +283,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/exampleS3Upload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
