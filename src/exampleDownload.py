@@ -1,30 +1,44 @@
 from ftplib import FTP
-import wget, os.path
+import wget
+import os.path
+import logging
+
+siteHome = 'ftp.ncbi.nlm.nih.gov'
+siteSubDir = 'blast/db'
+logFile = '/home/zaz/bioda/logs/publicDownloadLog.log'
+dbFile = '/home/zaz/bioda/database/'
+regexEnding = '.gz'
+
+logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='w')
 
 
-ftp = FTP('ftp.ncbi.nlm.nih.gov')
-print("logging in...")
-ftp.login()
-print("changing to /blast/db directory...")
-ftp.cwd('blast/db')
-print("accessing files...\n\n")
+ftp = FTP(f'{siteHome}')
 
+logging.info("Preparing to log in...")
+try:
+    ftp.login()
+except IOError as e:
+    logging.error("Error logging in. " + e.errno)
+else:
+    logging.info("Login successful.")
+
+logging.info(f'changing to {siteSubDir} directory...')
+try:
+    ftp.cwd(f'{siteSubDir}')
+except IOError as e:
+    logging.error("Error logging in. " + e.errno)
+else:
+    logging.info(f"successfully changed to {siteSubDir} directory.")
 
 fileNames = ftp.nlst()
 for file in fileNames:
     print(file)
-    if file.endswith(".gz"):
-        localFilePath = os.path.join('/home/zaz/bioda/database/', file)
-        url = "ftp://ftp.ncbi.nlm.nih.gov/blast/db/" + file
+    if file.endswith(f"{regexEnding}"):
+        localFilePath = os.path.join(f'{dbFile}', file)
+        url = f"ftp://{siteHome}/{siteSubDir}/" + file
         wget.download(url, localFilePath)
 
 ftp.quit()
-#url = "ftp://ftp.ncbi.nlm.nih.gov/blast/db/16SMicrobial.tar.gz"
-#wget.download(url, '/home/zaz/bioda/database')
 
-
-#scrape all text, put in ary
-#for item in ary
-#    if item.endswith(.gz):
-#        url = ftp://ftp.ncbi.nlm.nih.gov/blast/db/item
-#        wget.download(url, '/home/zaz/bioda/database')
+#logs
+#functions instead of hardcoding
