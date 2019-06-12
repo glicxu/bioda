@@ -1,0 +1,35 @@
+import os
+import logging
+
+logFile = '/home/zaz/bioda/logs/batchBlastLog.log'
+blastResults = "/home/zaz/bioda/blastResults"
+
+#uses ncbi blastp cli to search multiple file
+
+logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='w', format='%(asctime)s %(message)s')
+def blastBatchSearch(list, searchtype, database, jobName): #list is list of files to search, searchType is "blastp",etc. dataBase
+    #create jobName subdirectory
+    #check for exception if folder already exists
+    for file in list:
+        blastSingleSearch(file, searchtype, database)
+    logging.info("End of blast search.")
+
+def blastSingleSearch(file, searchtype, database):
+    try:
+        outpath = os.path.splitext(f'{blastResults}/{searchtype}{database}:{file}')[0]
+        logging.info(f"Attempting to run {searchtype} on {file} against db {database}...")
+        os.system(f'{searchtype} -query {file} -db {database} -out {outpath}.txt')
+    except FileNotFoundError as e:
+        logging.error("Exception has occurred", exc_info=True)
+    except FileExistsError as e:
+        logging.error(f"{outpath}.txt already exists. Has been overwritten")
+    else:
+        logging.info(f"Successfully applied ncbi blast to file: {file}.")
+
+#add jobname
+#add exception fileexists or folderexists if file already exists`
+#add main- check odin
+#rabbitMQ- learn how to enqueue and dequeue
+#If time- SQS
+#Apache Kafka
+#unit testing

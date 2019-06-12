@@ -1,7 +1,7 @@
 import os
 import logging
 
-logFile = '/home/zaz/bioda/logs/s3UploadLog.log'
+logFile = '/home/zaz/bioda/logs/s3UploadLog.log' #/tmp/biodaLog
 dbFile = '/home/zaz/bioda/database'
 s3Bucket = 's3://andrew-zhang-backup-bucket'
 
