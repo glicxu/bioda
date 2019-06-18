@@ -1,17 +1,21 @@
 from ftplib import FTP
+from time import gmtime, strftime
 import wget
-import os.path
+import os
 import logging
-
 from config import config as conf
 
 siteHome = conf.siteHome
 siteSubDir = 'blast/db'
-logFile = '/home/zaz/bioda/logs/dataDownloadLog.log'
-dbFile = '/home/zaz/bioda/database/'
+currentTime = strftime("%Y-%m-%d:%H:%M:%S", gmtime())
+logFile = f'/tmp/bioda/dataDownloadLogs{currentTime}' #TODO: change log file for other python files
+dbFile = '/home/biodadb/'
 regexEnding = '.gz'
 
-logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='w', format='%(asctime)s %(message)s')
+#if /tmp/bioda/dataDownloadLogs does not exists, then create one
+if not os.path.exists(logFile):
+    os.mkdir(logFile, 0o777)
+logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='a', format='%(asctime)s %(message)s')
 
 
 ftp = FTP(f'{siteHome}')
