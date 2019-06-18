@@ -8,15 +8,16 @@ from config import config as conf
 siteHome = conf.siteHome
 siteSubDir = 'blast/db'
 currentTime = strftime("%Y-%m-%d:%H:%M:%S", gmtime())
-logFile = f'/tmp/bioda/dataDownloadLogs{currentTime}' #TODO: change log file for other python files
-dbFile = '/home/biodadb/'
+logFile = f'/tmp/bioda/logs/dataDownloadLogs{currentTime}.log' #TODO: change log file for other python files
+dbFile = '/home/zaz/biodadb/'
 regexEnding = '.gz'
 
-#if /tmp/bioda/dataDownloadLogs does not exists, then create one
-if not os.path.exists(logFile):
-    os.mkdir(logFile, 0o777)
-logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='a', format='%(asctime)s %(message)s')
 
+#if /tmp/bioda does not exists, create bioda directory
+if not os.path.isdir('/tmp/bioda/logs'):
+    os.makedirs('/tmp/bioda/logs')
+
+logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='a', format='%(asctime)s %(message)s')
 
 ftp = FTP(f'{siteHome}')
 

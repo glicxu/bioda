@@ -1,7 +1,9 @@
 import os
 import logging
+from time import gmtime, strftime
 
-logFile = '/home/zaz/bioda/logs/s3InterfaceLog.log'
+currentTime = strftime("%Y-%m-%d:%H:%M:%S", gmtime())
+logFile = f'/tmp/bioda/logs/s3InterfaceLogs{currentTime}.log'
 dbFile = '/home/zaz/bioda/database'
 s3Bucket = 's3://andrew-zhang-backup-bucket'
 
@@ -23,12 +25,8 @@ finally:
     logging.info("End of sync")
 
 
-#tasks:
-#made python time stamp
+#TODO: tasks:
 #know how to blast from cli write to file
-#renamed files to s3functions, etc.
-#be more specific with logs,
-#blast w/ multiple files in query- use a for loop through command line
 
 #put program into functions
 #simple queue service- start with rabbitmq for local msgqueue

@@ -14,6 +14,7 @@ def blastBatchSearch(list, searchtype, database, jobName): #list is list of file
         blastSingleSearch(file, searchtype, database)
     logging.info("End of blast search.")
 
+#blast a single sequence
 def blastSingleSearch(file, searchtype, database):
     try:
         outpath = os.path.splitext(f'{blastResults}/{searchtype}{database}:{file}')[0]
@@ -33,3 +34,4 @@ def blastSingleSearch(file, searchtype, database):
 #If time- SQS
 #Apache Kafka
 #unit testing
+#put stuff into main files
