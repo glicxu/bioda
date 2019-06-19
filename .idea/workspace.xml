@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84d9bb1a-d72e-489b-9de8-a16dd39f6d0c" name="Default" comment="last commit before code review&#10;-Andrew Zhang">
+    <list default="true" id="84d9bb1a-d72e-489b-9de8-a16dd39f6d0c" name="Default" comment="Added main file to dataDownload.py&#10;-Andrew Zhang">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BatchBlast.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/blastbatch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Datadownload.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Datadownload.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/S3Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/S3Interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exampleDownload.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exampleS3Upload.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/receiveMQ.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/MQreceive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sendMQ.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/MQsend.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Datadownload.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="19" column="110" selection-start-line="19" selection-start-column="110" selection-end-line="19" selection-end-column="110" />
+            <state relative-caret-position="334">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -31,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/S3Interface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="165">
+              <caret line="33" column="59" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="59" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -43,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/blastbatch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+            <state relative-caret-position="165">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -88,9 +83,9 @@
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/src/exampleS3Upload.py" />
         <option value="$PROJECT_DIR$/src/BatchBlast.py" />
+        <option value="$PROJECT_DIR$/src/blastbatch.py" />
         <option value="$PROJECT_DIR$/src/Datadownload.py" />
         <option value="$PROJECT_DIR$/src/S3Interface.py" />
-        <option value="$PROJECT_DIR$/src/blastbatch.py" />
       </list>
     </option>
   </component>
@@ -265,10 +260,24 @@
       <option name="project" value="LOCAL" />
       <updated>1559620324589</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changed around pathing for Datadownload and S3Interface; cleaned up minor issues.&#10;Datadownload and S3Interface are now running successfully.&#10;Logs are now writing to /tmp/bioda/logs&#10;&#10;-Andrew Zhang">
+      <created>1560902025170</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1560902025170</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added main file to dataDownload.py&#10;-Andrew Zhang">
+      <created>1560902894336</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1560902894336</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -281,16 +290,16 @@
     <frame x="0" y="0" width="1920" height="1010" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24934107" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24934107" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32993197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39909297" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32993197" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32993197" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32993197" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -325,7 +334,9 @@
     <MESSAGE value="exampleDownload.py searches for files from /blast/db that end in &quot;.gz&quot; and downloads them to local repository ~/bioda/database.&#10;-Andrew Zhang" />
     <MESSAGE value="Wrote a basic python program to upload &amp; sync ~/bioda/database with s3://andrew-zhang-backup-bucket.&#10;Added a comment with a similar line to download &amp; sync the above, for future use.&#10;-Andrew Zhang" />
     <MESSAGE value="last commit before code review&#10;-Andrew Zhang" />
-    <option name="LAST_COMMIT_MESSAGE" value="last commit before code review&#10;-Andrew Zhang" />
+    <MESSAGE value="Changed around pathing for Datadownload and S3Interface; cleaned up minor issues.&#10;Datadownload and S3Interface are now running successfully.&#10;Logs are now writing to /tmp/bioda/logs&#10;&#10;-Andrew Zhang" />
+    <MESSAGE value="Added main file to dataDownload.py&#10;-Andrew Zhang" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added main file to dataDownload.py&#10;-Andrew Zhang" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/app.log" />
@@ -374,10 +385,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/blastbatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Datadownload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="19" column="110" selection-start-line="19" selection-start-column="110" selection-end-line="19" selection-end-column="110" />
+        <state relative-caret-position="334">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
@@ -386,18 +407,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/S3Interface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/blastbatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        <state relative-caret-position="165">
+          <caret line="33" column="59" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="59" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
