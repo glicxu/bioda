@@ -27,6 +27,11 @@ def blastSingleSearch(file, searchtype, database):
     else:
         logging.info(f"Successfully applied ncbi blast to file: {file}.")
 
+def main():
+
+
+if __name__ == "__main__":
+    main()
 #add jobname
 #add exception fileexists or folderexists if file already exists`
 #add main- check odin
@@ -34,4 +39,4 @@ def blastSingleSearch(file, searchtype, database):
 #If time- SQS
 #Apache Kafka
 #unit testing
-#put stuff into main files
+#put stuff into main files: blastbatch, S3interface, dataDownload
