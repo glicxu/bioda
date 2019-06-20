@@ -1,21 +1,13 @@
 from ftplib import FTP
-from time import gmtime, strftime
 import wget
 import os
 import logging
 from config import config as conf
 
-siteHome = conf.siteHome
-siteSubDir = 'blast/db'
-currentTime = strftime("%Y-%m-%d:%H:%M:%S", gmtime())
-logFile = f'/tmp/bioda/logs/dataDownloadLogs{currentTime}.log' #TODO: change log file for other python files
-dbFile = '/home/zaz/biodadb/'
-regexEnding = '.gz'
-
 
 #downloads from website to /home/zaz/bioda
-def main():
-    #if /tmp/bioda does not exists, create bioda directory
+def download(siteHome, siteSubDir, logFile, dbFile, regexEnding):
+    #if /tmp/bioda/logs does not exists, create bioda directory
     if not os.path.isdir('/tmp/bioda/logs'):
         os.makedirs('/tmp/bioda/logs')
     logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='a', format='%(asctime)s %(message)s')
@@ -48,5 +40,17 @@ def main():
     ftp.quit()
 
 
+def main():
+    
+    for item in conf.websiteList:
+        download(item.siteHome, item.siteSubDir, f'{conf.logFile}{conf.currentTime}.log', item.dbFile, item.regexEnding)
+    # Done: make siteSubDir-regexEnding called from config as conf
+    # Done: list of dicts in conf; each website downloaded from is a dictionary, with siteHome, SubDir, etc. as keys
+    # Done: removed green hardcodes
+
+
 if __name__ == "__main__":
     main()
+
+    # TODO: run batch download every, say, 2 days
+    # TODO: divide content in main to several functions, then only ref those fxns in the main fxn

@@ -4,8 +4,8 @@ import logging
 logFile = '/home/zaz/bioda/logs/batchBlastLog.log'
 blastResults = "/home/zaz/bioda/blastResults"
 
-#uses ncbi blastp cli to search multiple file
 
+#uses ncbi blastp cli to search multiple file
 logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='w', format='%(asctime)s %(message)s')
 def blastBatchSearch(list, searchtype, database, jobName): #list is list of files to search, searchType is "blastp",etc. dataBase
     #create jobName subdirectory
@@ -13,6 +13,7 @@ def blastBatchSearch(list, searchtype, database, jobName): #list is list of file
     for file in list:
         blastSingleSearch(file, searchtype, database)
     logging.info("End of blast search.")
+
 
 #blast a single sequence
 def blastSingleSearch(file, searchtype, database):
@@ -29,9 +30,13 @@ def blastSingleSearch(file, searchtype, database):
 
 def main():
 
+#TODO: test to see if both fxns work(main fxns are essentially unit testing)
+
 
 if __name__ == "__main__":
     main()
+
+
 #add jobname
 #add exception fileexists or folderexists if file already exists`
 #add main- check odin

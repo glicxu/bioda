@@ -5,12 +5,13 @@ from time import gmtime, strftime
 currentTime = strftime("%Y-%m-%d:%H:%M:%S", gmtime())
 logFile = f'/tmp/bioda/logs/s3InterfaceLogs{currentTime}.log'
 dbFile = '/home/zaz/bioda/database'
+dbFileDownload = '/home/zaz/bioda/databaseDownload'
 s3Bucket = 's3://andrew-zhang-backup-bucket'
 
 logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='w', format='%(asctime)s %(message)s')
 
 
-#upload sync from local to s3 bucket
+# upload sync from local to s3 bucket
 def uploadSync():
     try:
         sync_command = f"aws s3 sync {dbFile} {s3Bucket}"
@@ -30,8 +31,8 @@ def uploadSync():
 
 def downloadSync():
     try:
-        sync_command = f"aws s3 sync {s3Bucket} {dbFile}"
-        logging.info(f"Starting S3 sync/download from {s3Bucket} to {dbFile}...")
+        sync_command = f"aws s3 sync {s3Bucket} {dbFileDownload}"
+        logging.info(f"Starting S3 sync/download from {s3Bucket} to {dbFileDownload}...")
         os.system(sync_command)
         returnCode = os.system("echo $?")
         logging.info(f"The return code for S3 sync is {returnCode}")
@@ -44,8 +45,18 @@ def downloadSync():
     finally:
         logging.info("End of sync")
 
-#TODO: tasks:
-#know how to blast from cli write to file
-#remove global variables
-#put program into functions
-#simple queue service- start with rabbitmq for local msgqueue
+
+def main():
+
+
+if __name__ == "__main__":
+    main()
+
+
+#TODO: move all variables to config, remove all hard coded variables
+#TODO: remove global variables;  remove all hardcoding for S3interface
+
+
+
+#TODO: simple queue service- start with rabbitmq for local msgqueue
+#TODO: know how to blast from cli write to file
