@@ -12,7 +12,7 @@ s3Bucket = 's3://andrew-zhang-backup-bucket'
 
 
 # Datadownload variables
-websiteList = [{'siteHome: "ftp.ncbi.nlm.nih.gov"', 'siteSubDir: "blast/db"', 'logFile: "/tmp/bioda/logs/dataDownloadLogs"', 'dbFile: "/home/zaz/biodadb/"', 'regexEnding: ".gz"'},
+websiteList = [{'siteHome': "ftp.ncbi.nlm.nih.gov", 'siteSubDir': "blast/db", 'logFile': "/tmp/bioda/logs/dataDownloadLogs", 'dbFile': "/home/zaz/biodadb/", 'regexEnding': ".gz"},
                {},
                {},
                {}]

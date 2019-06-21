@@ -29,7 +29,7 @@ def uploadSync():
         logging.info("End of sync")
 
 
-def downloadSync():
+def downloadSync(s3Bucket,  dbFileDownload, ):
     try:
         sync_command = f"aws s3 sync {s3Bucket} {dbFileDownload}"
         logging.info(f"Starting S3 sync/download from {s3Bucket} to {dbFileDownload}...")
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
 #TODO: move all variables to config, remove all hard coded variables
 #TODO: remove global variables;  remove all hardcoding for S3interface
-
+# TODO: divide content in main to several functions, then only ref those fxns in the main fxn
 
 
 #TODO: simple queue service- start with rabbitmq for local msgqueue
