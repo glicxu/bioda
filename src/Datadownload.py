@@ -8,14 +8,6 @@ from config import config as conf
 
 #downloads from website to /home/zaz/bioda
 def download(siteHome, siteSubDir, logFile, dbFile, regexEnding):
-
-
-   # from crontab import CronTab
-   # cron = CronTab()
-   # job = cron.new(command='')
-   # job.hour.every(1)
-
-
     #if /tmp/bioda/logs does not exists, create bioda directory
     if not os.path.isdir('/tmp/bioda/logs'):
         os.makedirs('/tmp/bioda/logs')
@@ -53,12 +45,12 @@ def main():
 
     for item in conf.websiteList:
         download(item['siteHome'], item['siteSubDir'], f"{item['logFile']}{conf.currentTime}.log", item['dbFile'], item['regexEnding'])
-    # Done: make siteSubDir-regexEnding called from config as conf
-    # Done: list of dicts in conf; each website downloaded from is a dictionary, with siteHome, SubDir, etc. as keys
-    # Done: removed green hardcodes
 
 
 if __name__ == "__main__":
     main()
 
+    # Done: make siteSubDir-regexEnding called from config as conf
+    # Done: list of dicts in conf; each website downloaded from is a dictionary, with siteHome, SubDir, etc. as keys
+    # Done: removed green hardcodes
     # TODO: run batch download every, say, 2 days

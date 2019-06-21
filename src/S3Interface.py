@@ -56,7 +56,5 @@ if __name__ == "__main__":
 #TODO: move all variables to config, remove all hard coded variables
 #TODO: remove global variables;  remove all hardcoding for S3interface
 # TODO: divide content in main to several functions, then only ref those fxns in the main fxn
-
-
 #TODO: simple queue service- start with rabbitmq for local msgqueue
 #TODO: know how to blast from cli write to file
