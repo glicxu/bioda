@@ -30,13 +30,11 @@ def blastSingleSearch(file, searchtype, database):
 
 def main():
 
-#TODO: test to see if both fxns work(main fxns are essentially unit testing)
-
-
 if __name__ == "__main__":
     main()
 
-
+#TODO: test to see if both fxns work(main fxns are essentially unit testing)
+#TODO: remove hardcoding, reference conf
 #add jobname
 #add exception fileexists or folderexists if file already exists`
 #add main- check odin
