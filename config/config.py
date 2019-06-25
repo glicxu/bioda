@@ -21,6 +21,7 @@ websiteList = [{'siteHome': "ftp.ncbi.nlm.nih.gov", 'siteSubDir': "blast/db", 'l
                {'''website4'''}]
 
 # TODO: change aliasList to a more appropriate way
+# TODO: change WebsiteList objects from struct/dictionary to classes/objects
 # TODO: have a very systematic way of naming websiteList attributes
 # TODO: consistently check github board- work into gcalendar, say, everyday at  9am
 # TODO: put all log files from config into /tmp/bioda/logs/etc.

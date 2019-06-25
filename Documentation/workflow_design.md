@@ -1,7 +1,15 @@
 # Blast Workflow Design
 In this document, we describe the workflow for blast search. The workflow contains the following steps:
 1. User submitted a query request, with query file, search_type, and query db
+2. Upon user submscribe the workflow for blast search. The workflow contains the following steps:
+1. User submitted a query request, with query file, search_type, and query db
 2. Upon user submission, bioda persist those request into a database, and return user with a work reference_id, which user can use to get result
+3. Job creation: JobManager create new from database with following step:
+  a. read from database for all new search jobs
+  b. For each job, create a json message and send the message to BlastSearch MessageQ
+4.BlastWoker: BlastWorker subscribes to BlastSearch MQ, procese the received message, and return the result into BlastResult MQ
+
+## Steps for JobManager to ission, bioda persist those request into a database, and return user with a work reference_id, which user can use to get result
 3. Job creation: JobManager create new from database with following step:
   a. read from database for all new search jobs
   b. For each job, create a json message and send the message to BlastSearch MessageQ

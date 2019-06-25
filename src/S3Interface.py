@@ -64,4 +64,4 @@ if __name__ == "__main__":
 #TODO: know how to blast from cli write to file
 
 #UPLOADSYNC PSEUDOCODE (for each website, e.g. ncbi)
-    sync from /home/zaz/biodadb/ncbi --> s3://andrew_zhang_backup_bucket/ncbi
+#   sync from /home/zaz/biodadb/ncbi --> s3://andrew_zhang_backup_bucket/ncbi
