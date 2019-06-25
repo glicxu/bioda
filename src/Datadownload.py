@@ -7,20 +7,25 @@ from config import config as conf
 
 # downloads from website to /home/zaz/biodadbb
 def download(siteHome, siteSubDir, logFile, dbFile, regexEnding):
-    logSetup(siteHome, siteSubDir, logFile, dbFile, regexEnding)
-    ftpObject = ftpConnect(siteHome, siteSubDir, dbFile, regexEnding)
-    ftpDownload(siteHome, siteSubDir, logFile, dbFile, regexEnding, ftpObject)
+    logSetup(logFile)
+    dbSetup(dbFile)
+    ftpObject = ftpConnect(siteHome, siteSubDir)
+    ftpDownload(siteHome, siteSubDir, dbFile, regexEnding, ftpObject)
 
 
-# checks if dir to write logs to exists; if not, creates one. Then, sets log settings
-def logSetup(siteHome, siteSubDir, logFile, dbFile, regexEnding):
-    if not os.path.isdir(conf.dataDownloadLog):
-        os.makedirs(conf.dataDownloadLog)
-    logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='a', format='%(asctime)s %(message)s')
+def logSetup(logFile):
+    if not os.path.isdir(logFile):
+        os.makedirs(logFile)
+    logging.basicConfig(level=logging.INFO, filename=f'{logFile}/{conf.currentTime}.log', filemode='a', format='%(asctime)s %(message)s')
+
+
+def dbSetup(dbFile):
+    if not os.path.isdir(dbFile):
+        os.makedirs(dbFile)
 
 
 # connects/logins to ftp server, then  cwd to correct subdirectory, then downloads appropriate files
-def ftpConnect(siteHome, siteSubDir, dbFile, regexEnding):
+def ftpConnect(siteHome, siteSubDir):
     # connects
     ftp = FTP(f'{siteHome}')
     logging.info(f"Preparing to log in to {siteHome}...")
@@ -41,25 +46,27 @@ def ftpConnect(siteHome, siteSubDir, dbFile, regexEnding):
     return ftp
 
 
-def ftpDownload(siteHome, siteSubDir, logFile, dbFile, regexEnding, ftp):
+def ftpDownload(siteHome, siteSubDir, dbFile, regexEnding, ftp):
     # download
     fileNames = ftp.nlst()
+    logging.info("Now downloading all files with regex '*.gz'...")
     for file in fileNames:
-        logging.info(f"Now downloading {file}...")
         if file.endswith(f"{regexEnding}"):
             localFilePath = os.path.join(f'{dbFile}', file)
             url = f"ftp://{siteHome}/{siteSubDir}/" + file
+            logging.info(f"Now downloading {file}...")
             wget.download(url, localFilePath)
-        logging.info(f"Successfully downloaded {file}.")
+            logging.info(f"Successfully downloaded {file}.")
     ftp.quit()
 
 
 def main():
     for item in conf.websiteList:
-        download(item['siteHome'], item['siteSubDir'], f"{item['logFile']}{conf.currentTime}.log", item['dbFile'], item['regexEnding'])
+        download(item['siteHome'], item['siteSubDir'], f"{item['logFile']}", item['dbFile'], item['regexEnding'])
 
 
 if __name__ == "__main__":
     main()
 
-    # TODO: cut down unnecessary parameters from ftpconnect, ftpdownload, logsetup
+    #TODO: add in a check to see if /home/zaz/biodadb/ncbi is a dir, then create one if false
+    #TODO: don't write logs into /tmp/bioda/logs/ncbi/10am, put into /tmp/bioda/logs/dataDownloadLogs/ncbi/10am, etc.

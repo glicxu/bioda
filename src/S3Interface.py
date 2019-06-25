@@ -37,7 +37,7 @@ def downloadSync(#TODO: add parameters):
         logging.info(f"The return code for S3 sync is {returnCode}")
         if not returnCode == 0:
             raise FileNotFoundError
-    except FileNotFoundError as e:
+    except FileNotFoundError #TODO: don't write logs into /tmp/bioda/logs/ncbi/10am, put into /tmp/bioda/logs/dataDownloadLogs/ncbi/10am, etc.as e:
         logging.error("Exception has occurred", exc_info=True)
     else:
         logging.info("Sync has completed successfully")
@@ -54,7 +54,14 @@ def main():
 if __name__ == "__main__":
     main()
 
+#s3Bucket = 's3://andrew-zhang-backup-bucket'
+#dbfile = /home/zaz/biodadb
+# TODO: change regex from python ".endswit()" function to a real regex
+# TODO: don't write logs into /tmp/bioda/logs/ncbi/10am, put into /tmp/bioda/logs/S3InterfaceLogs/ncbi/10am, etc.
 #TODO: for item in conf.websiteLIst loop to sync each website dbfile with it's respective s3bucket subdirectory
 #TODO: move all variables to config, remove all hard coded variables INCLUDING log Files
 #TODO: simple queue service- start with rabbitmq for local msgqueue
 #TODO: know how to blast from cli write to file
+
+#UPLOADSYNC PSEUDOCODE (for each website, e.g. ncbi)
+    sync from /home/zaz/biodadb/ncbi --> s3://andrew_zhang_backup_bucket/ncbi

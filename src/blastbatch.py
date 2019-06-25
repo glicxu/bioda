@@ -33,8 +33,9 @@ def main():
 if __name__ == "__main__":
     main()
 
-#TODO: test to see if both fxns work(main fxns are essentially unit testing)
+#TODO: test in main to see if both fxns work(main fxns are essentially unit testing)
 #TODO: remove hardcoding, reference conf
+#TODO: Run Blast using EC2 VM with S3 data
 #add jobname
 #add exception fileexists or folderexists if file already exists`
 #add main- check odin
