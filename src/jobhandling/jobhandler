@@ -1,0 +1,31 @@
+#User defines parameters of search (sequenceFile, type of search, database, search criteria etc.);
+# Organize this data into dictionary, give jobID (which will be used in resultq to retrieve result)
+
+#Job creation: JobManager create new from database with following step:
+#    read from database for all new search jobs
+#    For each job, create a json message and send the message to BlastSearch MessageQ
+
+## Steps for JobManager to create a new job
+# 1. Creat an empty Python Dictionary
+# 2. Fill in the value for the following name: job_id, query_filename, search_db, query_type (start with hard value)
+# 3. convert python dict into json using json.dumps
+# 4. send json message into BlastSearch Queue
+
+import json
+import pika
+
+
+def processJob(id, queryFile, dbFile, queryType):
+    jobAttributes = {"job_id": id, "query_filename": queryFile, "search_database": dbFile, "search_type": queryType}
+    jobJsonString = json.dump(jobAttributes)
+
+    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    channel = connection.channel()
+    channel.queue_declare(queue='jobhandlerqueue')
+    channel.basic_publish(exchange='', routing_key='jobhandlerqueue', body=jobJsonString)
+
+def main():
+
+
+if __name__ == "__main__":
+    main()
