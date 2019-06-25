@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84d9bb1a-d72e-489b-9de8-a16dd39f6d0c" name="Default" comment="Fixed dataDownload, other changes I forgot tbh.&#10;About to fix path structure of logs.&#10;About to change S3 to sync with specific S3 subdirectories">
-      <change afterPath="$PROJECT_DIR$/Documentation/data_job_overview.md" afterDir="false" />
+    <list default="true" id="84d9bb1a-d72e-489b-9de8-a16dd39f6d0c" name="Default" comment="Added md file for data overview and job handling overview.&#10;&#10;-Andrew Zhang">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/workflow_design.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/workflow_design.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/S3Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/S3Interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Datadownload.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamanagement/Datadownload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/S3Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamanagement/S3Interface.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +27,8 @@
         <entry file="file://$PROJECT_DIR$/Documentation/workflow_design.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-60">
-                <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <first_editor relative-caret-position="160">
+                <caret line="4" column="77" lean-forward="true" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
               </first_editor>
               <second_editor />
             </state>
@@ -38,11 +36,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/schedule.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Documentation/data_job_overview.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="100">
-                <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+              <first_editor relative-caret-position="280">
+                <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               </first_editor>
               <second_editor />
             </state>
@@ -62,7 +69,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/S3Interface.py">
+        <entry file="file://$PROJECT_DIR$/src/datamanagement/S3Interface.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
               <caret line="57" column="27" lean-forward="true" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
@@ -74,7 +81,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Datadownload.py">
+        <entry file="file://$PROJECT_DIR$/src/datamanagement/Datadownload.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
               <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
@@ -110,8 +117,10 @@
       <find>dbfile</find>
       <find>s3bucket</find>
       <find>bucket</find>
-      <find>regex</find>
       <find>backup</find>
+      <find>regex</find>
+      <find>queue</find>
+      <find>mq</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,8 +143,8 @@
         <option value="$PROJECT_DIR$/src/Datadownload.py" />
         <option value="$PROJECT_DIR$/config/config.py" />
         <option value="$PROJECT_DIR$/src/S3Interface.py" />
-        <option value="$PROJECT_DIR$/Documentation/workflow_design.md" />
         <option value="$PROJECT_DIR$/Documentation/data_job_overview.md" />
+        <option value="$PROJECT_DIR$/Documentation/workflow_design.md" />
       </list>
     </option>
   </component>
@@ -178,6 +187,12 @@
               <item name="bioda" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bioda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bioda" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="datamanagement" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -188,6 +203,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/datamanagement" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -214,7 +234,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Datadownload.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/datamanagement/Datadownload.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -426,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561488993925</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added md file for data overview and job handling overview.&#10;&#10;-Andrew Zhang">
+      <created>1561499364525</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1561499364525</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -495,7 +522,8 @@
     <MESSAGE value="broke up dataDownloads into functions; made log fileNames more readable&#10;-Andrew Zhang" />
     <MESSAGE value="Fixed schedule, dataDownload&#10;-Andrew Z" />
     <MESSAGE value="Fixed dataDownload, other changes I forgot tbh.&#10;About to fix path structure of logs.&#10;About to change S3 to sync with specific S3 subdirectories" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed dataDownload, other changes I forgot tbh.&#10;About to fix path structure of logs.&#10;About to change S3 to sync with specific S3 subdirectories" />
+    <MESSAGE value="Added md file for data overview and job handling overview.&#10;&#10;-Andrew Zhang" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added md file for data overview and job handling overview.&#10;&#10;-Andrew Zhang" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/app.log" />
@@ -587,14 +615,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/schedule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datadownload.py">
+    <entry file="file://$PROJECT_DIR$/src/datamanagement/Datadownload.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
@@ -604,7 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/S3Interface.py">
+    <entry file="file://$PROJECT_DIR$/src/datamanagement/S3Interface.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="57" column="27" lean-forward="true" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
@@ -634,8 +655,8 @@
     <entry file="file://$PROJECT_DIR$/Documentation/workflow_design.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-60">
-            <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <first_editor relative-caret-position="160">
+            <caret line="4" column="77" lean-forward="true" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
           </first_editor>
           <second_editor />
         </state>
@@ -644,10 +665,17 @@
     <entry file="file://$PROJECT_DIR$/Documentation/data_job_overview.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="100">
-            <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+          <first_editor relative-caret-position="280">
+            <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/schedule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
