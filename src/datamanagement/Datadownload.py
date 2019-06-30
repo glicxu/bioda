@@ -49,7 +49,7 @@ def ftpConnect(siteHome, siteSubDir):
 def ftpDownload(siteHome, siteSubDir, dbFile, regexEnding, ftp):
     # download
     fileNames = ftp.nlst()
-    logging.info("Now downloading all files with regex '*.gz'...")
+    logging.info(f"Now downloading all files with regex '*{regexEnding}'...")
     for file in fileNames:
         if file.endswith(f"{regexEnding}"):
             localFilePath = os.path.join(f'{dbFile}', file)
