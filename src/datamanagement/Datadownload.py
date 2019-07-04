@@ -15,9 +15,9 @@ def download(siteHome, siteSubDir, logFile, dbFile, regexEnding):
 
 
 def logSetup(logFile):
-    if not os.path.isdir(logFile):
+    if not os.path.isdir(f"{logFile}/datadownloadlogs"):
         os.makedirs(logFile)
-    logging.basicConfig(level=logging.INFO, filename=f'{logFile}/{conf.currentTime}.log', filemode='a', format='%(asctime)s %(message)s')
+    logging.basicConfig(level=logging.INFO, filename=f'{logFile}/datadownloadlogs/{conf.currentTime}.log', filemode='a', format='%(asctime)s %(message)s')
 
 
 def dbSetup(dbFile):
@@ -70,5 +70,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-    #TODO: add in a check to see if /home/zaz/biodadb/ncbi is a dir, then create one if false
     #TODO: don't write logs into /tmp/bioda/logs/ncbi/10am, put into /tmp/bioda/logs/dataDownloadLogs/ncbi/10am, etc.
