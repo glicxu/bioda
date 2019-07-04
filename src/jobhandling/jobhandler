@@ -26,6 +26,5 @@ def processJob(id, queryFile, dbFile, queryType):
 
 def main():
 
-
 if __name__ == "__main__":
     main()
