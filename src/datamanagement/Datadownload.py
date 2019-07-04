@@ -1,7 +1,8 @@
-from ftplib import FTP
-import wget
-import os
-import logging
+from ftplib import FTP #file transfer protocol
+import wget #wget downloads from url to localFilepath
+import os #system commands
+import logging #info logs, error logs, etc.
+import re #regex to search and download appropriate files
 from config import config as conf
 
 
@@ -50,8 +51,9 @@ def ftpDownload(siteHome, siteSubDir, dbFile, regexEnding, ftp):
     # download
     fileNames = ftp.nlst()
     logging.info(f"Now downloading all files with regex '*{regexEnding}'...")
+    fileRegex = re.compile(rf'*{regexEnding}')
     for file in fileNames:
-        if file.endswith(f"{regexEnding}"):
+        if fileRegex.match(file):
             localFilePath = os.path.join(f'{dbFile}', file)
             url = f"ftp://{siteHome}/{siteSubDir}/" + file
             logging.info(f"Now downloading {file}...")
