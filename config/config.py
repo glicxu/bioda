@@ -15,7 +15,7 @@ s3Bucket = 's3://andrew-zhang-backup-bucket'
 aliasList = ['ncbi', None, None, None]
 logDir = '/tmp/bioda/logs' #parent dir to store each website's logs in separate subdirs
 dbDir = '/home/zaz/biodadb' #parent dir to store each website's db in separate subdirs
-websiteList = [{'siteHome': "ftp.ncbi.nlm.nih.gov", 'siteSubDir': "blast/db", 'logFile': f'{logDir}/{aliasList[0]}', 'dbFile': f'{dbDir}/{aliasList[0]}', 'regexEnding': ".gz$"},
+websiteList = [{'siteHome': "ftp.ncbi.nlm.nih.gov", 'siteSubDir': "blast/db", 'logFile': f'{logDir}/{aliasList[0]}', 'dbFile': f'{dbDir}/{aliasList[0]}', 'fileRegexF': ".gz$", 'bucketSubDir': f   "{s3Bucket}/{aliasList[0]}",
                {'''website2'''},
                {'''website3'''},
                {'''website4'''}]

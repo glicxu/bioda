@@ -7,11 +7,11 @@ from config import config as conf
 
 
 # downloads from website to /home/zaz/biodadbb
-def download(siteHome, siteSubDir, logFile, dbFile, regexEnding):
+def download(siteHome, siteSubDir, logFile, dbFile, fileRegex):
     logSetup(logFile)
     dbSetup(dbFile)
     ftpObject = ftpConnect(siteHome, siteSubDir)
-    ftpDownload(siteHome, siteSubDir, dbFile, regexEnding, ftpObject)
+    ftpDownload(siteHome, siteSubDir, dbFile, fileRegex, ftpObject)
 
 
 def logSetup(logFile):
@@ -47,11 +47,11 @@ def ftpConnect(siteHome, siteSubDir):
     return ftp
 
 
-def ftpDownload(siteHome, siteSubDir, dbFile, regexEnding, ftp):
+def ftpDownload(siteHome, siteSubDir, dbFile, fileRegex, ftp):
     # download
     fileNames = ftp.nlst()
-    logging.info(f"Now downloading all files with regex '*{regexEnding}'...")
-    fileRegex = re.compile(rf'*{regexEnding}')
+    logging.info(f"Now downloading all files with regex '*{fileRegex}'...")
+    fileRegex = re.compile(rf'*{fileRegex}')
     for file in fileNames:
         if fileRegex.match(file):
             localFilePath = os.path.join(f'{dbFile}', file)
@@ -64,10 +64,11 @@ def ftpDownload(siteHome, siteSubDir, dbFile, regexEnding, ftp):
 
 def main():
     for item in conf.websiteList:
-        download(item['siteHome'], item['siteSubDir'], f"{item['logFile']}", item['dbFile'], item['regexEnding'])
+        download(item['siteHome'], item['siteSubDir'], f"{item['logFile']}", item['dbFile'], item['fileRegex'])
 
 
 if __name__ == "__main__":
     main()
 
     #TODO: don't write logs into /tmp/bioda/logs/ncbi/10am, put into /tmp/bioda/logs/dataDownloadLogs/ncbi/10am, etc.
+    #TODO: maybe make this into objects?

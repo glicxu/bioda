@@ -2,7 +2,7 @@
 #BlastWorker subscribes to BlastSearch MQ, processes the received message, and return the result into BlastResult MQ
 
 ## Steps for BlastWorker to process a job
-# 1. A worker is starte and run continously listening to jobhandler queue
+# 1. A worker is starte and run continously listening to jobCreator.py queue
 # 2. Upon receiving a new message, proces the message
 # 3. Processing:
 #   a. convert json message into a Python dictionary
@@ -24,7 +24,12 @@ def callback(ch, method, properties, body):
     print(" [x] Received %r" % body)
 
 
-channel.basic_consume(queue='jobhandlerqueue', auto_ack=True, on_message_callback=callback)
+channel.basic_consume(queue='blastworkerqueue', auto_ack=True, on_message_callback=callback)
+#read from bwqueue
+#use blastsearch.py to process job
+#send to resultqueue
+#TODO: move blastworkerq to conf.bwqueue
+#todo: write tests
 
 print(' [*] Waiting for messages. To exit press CTRL+C')
 channel.start_consuming()

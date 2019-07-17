@@ -29,7 +29,9 @@ def blastSingleSearch(file, searchtype, database):
         logging.info(f"Successfully applied ncbi blast to file: {file}.")
 
 def main():
-
+#todo:if single file, call blastsinglesearch
+#todo:else cal blastbatchsearch
+#todo: write tests
 if __name__ == "__main__":
     main()
 

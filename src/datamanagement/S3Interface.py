@@ -1,7 +1,7 @@
 import os
 import logging
 from time import gmtime, strftime
-import config from config as conf
+from config import config as conf
 
 currentTime = strftime("%Y-%m-%d:%H:%M:%S", gmtime())
 logFile = f'/tmp/bioda/logs/s3InterfaceLogs{currentTime}.log'
@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='w', for
 
 
 # upload sync from local to s3 bucket
-def uploadSync(#TODO: add parameters):
+def uploadSync(dbFile): #TODO: switch from conf.s3bucket to conf.s3bucket/ncbi/etc...
     try:
         sync_command = f"aws s3 sync {dbFile} {conf.s3Bucket}"
         logging.info(f"Starting S3 sync/upload from {dbFile} to {conf.s3Bucket/subdirectory}...")
@@ -28,7 +28,7 @@ def uploadSync(#TODO: add parameters):
         logging.info("End of sync")
 
 
-def downloadSync(#TODO: add parameters):
+def downloadSync(dbFile):#TODO: add parameters
     try:
         sync_command = f"aws s3 sync {conf.s3Bucket} {dbFile}"
         logging.info(f"Starting S3 sync/download from {conf.s3Bucket} to {dbFile}...")
@@ -45,18 +45,19 @@ def downloadSync(#TODO: add parameters):
         logging.info("End of sync")
 
 
+#this is a test to upload and download; later add
 def main():
-    for item in conf.websiteList():
-        uploadSync(#TODO: add parameters)
-        downloadSync(#TODO: add parameters)
-
+        for item in conf.websiteList:
+            uploadSync(item['logFile'], item['dbFile'], item['bucketSubDir'])
+            downloadSync(item['logFile'], item['dbFile'], item['bucketSubDir'])
+#todo: finish writing tests
 
 if __name__ == "__main__":
     main()
 
 #s3Bucket = 's3://andrew-zhang-backup-bucket'
 #dbfile = /home/zaz/biodadb
-# TODO: change regex from python ".endswit()" function to a real regex
+# Done: change regex from python ".endswit()" function to a real regex
 # TODO: don't write logs into /tmp/bioda/logs/ncbi/10am, put into /tmp/bioda/logs/S3InterfaceLogs/ncbi/10am, etc.
 #TODO: for item in conf.websiteLIst loop to sync each website dbfile with it's respective s3bucket subdirectory
 #TODO: move all variables to config, remove all hard coded variables INCLUDING log Files
