@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d9bb1a-d72e-489b-9de8-a16dd39f6d0c" name="Default" comment="rerouted log path, e.g. /tmp/bioda/logs/ncbi/10am to:&#10;/tmp/bioda/logs/datadownloadlogs/ncbi/10am">
-      <change afterPath="$PROJECT_DIR$/src/jobhandling/workers/imageworker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/datamanagement/Datadownload.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamanagement/Datadownload.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/datamanagement/S3Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamanagement/S3Interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobhandling/jobhandler" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobhandling/jobCreator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobhandling/workers/blastworker.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobhandling/workers/blastworker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searches/blastbatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/searches/blastsearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searches/blastsearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/searches/blastsearch.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,55 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/datamanagement/S3Interface.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Documentation/workflow_design.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="690">
-                <caret line="32" column="19" lean-forward="true" selection-start-line="10" selection-end-line="32" selection-end-column="19" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jobhandling/workers/blastworker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-              <folding>
-                <element signature="e#688#699#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jobhandling/workers/imageworker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="25" selection-start-column="25" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jobhandling/jobCreator.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
-              <caret line="23" column="79" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="79" />
+              <caret line="23" column="79" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="79" />
               <folding>
                 <element signature="e#705#716#0" expanded="true" />
               </folding>
@@ -76,23 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/searches/blastsearch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/datamanagement/Datadownload.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -100,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+            <state relative-caret-position="279">
+              <caret line="17" column="220" selection-start-line="17" selection-start-column="220" selection-end-line="17" selection-end-column="220" />
             </state>
           </provider>
         </entry>
@@ -140,6 +79,8 @@
       <find>regex</find>
       <find>fileregex</find>
       <find>siteho</find>
+      <find>blastres</find>
+      <find>blastresult</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,15 +105,15 @@
         <option value="$PROJECT_DIR$/common/queue.py" />
         <option value="$PROJECT_DIR$/Documentation/workflow_design.md" />
         <option value="$PROJECT_DIR$/src/jobhandling/resultqueue.py" />
-        <option value="$PROJECT_DIR$/src/datamanagement/Datadownload.py" />
-        <option value="$PROJECT_DIR$/config/config.py" />
         <option value="$PROJECT_DIR$/src/jobhandling/workers/imageworker.py" />
         <option value="$PROJECT_DIR$/src/jobhandling/jobhandler" />
         <option value="$PROJECT_DIR$/src/jobhandling/jobCreator.py" />
         <option value="$PROJECT_DIR$/src/searches/blastbatch.py" />
-        <option value="$PROJECT_DIR$/src/searches/blastsearch.py" />
         <option value="$PROJECT_DIR$/src/jobhandling/workers/blastworker.py" />
+        <option value="$PROJECT_DIR$/config/config.py" />
+        <option value="$PROJECT_DIR$/src/datamanagement/Datadownload.py" />
         <option value="$PROJECT_DIR$/src/datamanagement/S3Interface.py" />
+        <option value="$PROJECT_DIR$/src/searches/blastsearch.py" />
       </list>
     </option>
   </component>
@@ -194,6 +135,11 @@
             <path>
               <item name="bioda" type="b2602c69:ProjectViewProjectNode" />
               <item name="bioda" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bioda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bioda" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -227,7 +173,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.config">
+  <component name="RunManager" selected="Python.S3Interface">
     <configuration name="Datadownload" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bioda" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -249,7 +195,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="S3Interface" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bioda" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -257,11 +203,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/config" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/datamanagement" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/config/config.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/datamanagement/S3Interface.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -335,18 +281,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.Datadownload" />
-      <item itemvalue="Python.config" />
       <item itemvalue="Python.exampleDownload" />
       <item itemvalue="Python.exampleS3Upload" />
       <item itemvalue="Python.scheduleDatadownload" />
+      <item itemvalue="Python.S3Interface" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.scheduleDatadownload" />
+        <item itemvalue="Python.S3Interface" />
         <item itemvalue="Python.Datadownload" />
+        <item itemvalue="Python.scheduleDatadownload" />
         <item itemvalue="Python.exampleS3Upload" />
         <item itemvalue="Python.exampleDownload" />
-        <item itemvalue="Python.config" />
       </list>
     </recent_temporary>
   </component>
@@ -515,13 +461,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1928" height="1014" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32993197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -658,6 +605,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/jobhandling/workers/imageworker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jobhandling/workers/blastworker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="17" column="220" selection-start-line="17" selection-start-column="220" selection-end-line="17" selection-end-column="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/datamanagement/Datadownload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/datamanagement/S3Interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="16" column="94" selection-start-line="16" selection-start-column="94" selection-end-line="16" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Documentation/workflow_design.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -666,31 +654,17 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="690">
-            <caret line="32" column="19" lean-forward="true" selection-start-line="10" selection-end-line="32" selection-end-column="19" />
+          <first_editor relative-caret-position="99">
+            <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jobhandling/workers/imageworker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jobhandling/jobCreator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
-          <caret line="23" column="79" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="79" />
+          <caret line="23" column="79" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="79" />
           <folding>
             <element signature="e#705#716#0" expanded="true" />
           </folding>
@@ -699,38 +673,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/searches/blastsearch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jobhandling/workers/blastworker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding>
-            <element signature="e#688#699#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datamanagement/S3Interface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datamanagement/Datadownload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -16,7 +16,7 @@ def download(siteHome, siteSubDir, logFile, dbFile, fileRegex):
 
 def logSetup(logFile):
     if not os.path.isdir(f"{logFile}/datadownloadlogs"):
-        os.makedirs(logFile)
+        os.makedirs(f"{logFile}/datadownloadlogs")
     logging.basicConfig(level=logging.INFO, filename=f'{logFile}/datadownloadlogs/{conf.currentTime}.log', filemode='a', format='%(asctime)s %(message)s')
 
 
@@ -51,7 +51,7 @@ def ftpDownload(siteHome, siteSubDir, dbFile, fileRegex, ftp):
     # download
     fileNames = ftp.nlst()
     logging.info(f"Now downloading all files with regex '*{fileRegex}'...")
-    fileRegex = re.compile(rf'*{fileRegex}')
+    fileRegex = re.compile(rf'{fileRegex}')
     for file in fileNames:
         if fileRegex.match(file):
             localFilePath = os.path.join(f'{dbFile}', file)
@@ -64,7 +64,7 @@ def ftpDownload(siteHome, siteSubDir, dbFile, fileRegex, ftp):
 
 def main():
     for item in conf.websiteList:
-        download(item['siteHome'], item['siteSubDir'], f"{item['logFile']}", item['dbFile'], item['fileRegex'])
+        download(item['siteHome'], item['siteSubDir'], item[f'logFile'], item['dbFile'], item['fileRegex'])
 
 
 if __name__ == "__main__":

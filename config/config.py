@@ -12,13 +12,10 @@ s3Bucket = 's3://andrew-zhang-backup-bucket'
 
 
 #temp: list used to store aliases, try to work it into websiteList somehow;
-aliasList = ['ncbi', None, None, None]
+aliasList = ['ncbi']
 logDir = '/tmp/bioda/logs' #parent dir to store each website's logs in separate subdirs
 dbDir = '/home/zaz/biodadb' #parent dir to store each website's db in separate subdirs
-websiteList = [{'siteHome': "ftp.ncbi.nlm.nih.gov", 'siteSubDir': "blast/db", 'logFile': f'{logDir}/{aliasList[0]}', 'dbFile': f'{dbDir}/{aliasList[0]}', 'fileRegexF': ".gz$", 'bucketSubDir': f   "{s3Bucket}/{aliasList[0]}",
-               {'''website2'''},
-               {'''website3'''},
-               {'''website4'''}]
+websiteList = [{'siteHome': "ftp.ncbi.nlm.nih.gov", 'siteSubDir': "blast/db", 'logFile': f'{logDir}/{aliasList[0]}', 'dbFile': f'{dbDir}/{aliasList[0]}', 'fileRegex': ".gz$", 'bucketSubDir': f"{s3Bucket}/{aliasList[0]}"}]
 
 # TODO: change aliasList to a more appropriate way
 # TODO: change WebsiteList objects from struct/dictionary to classes/objects
