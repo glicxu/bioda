@@ -18,7 +18,7 @@ def blastBatchSearch(list, searchtype, database, jobName): #list is list of file
 #blast a single sequence
 def blastSingleSearch(file, searchtype, database):
     try:
-        outpath = os.path.splitext(f'{blastResults}/{searchtype}{database}:{file}')[0]
+        outpath = os.path.splitext(f'{blastResults}/{searchtype}/{database}:{file}')[0]
         logging.info(f"Attempting to run {searchtype} on {file} against db {database}...")
         os.system(f'{searchtype} -query {file} -db {database} -out {outpath}.txt')
     except FileNotFoundError as e:
@@ -29,6 +29,10 @@ def blastSingleSearch(file, searchtype, database):
         logging.info(f"Successfully applied ncbi blast to file: {file}.")
 
 def main():
+#todo:if single file, call blastsinglesearch
+#todo:else cal blastbatchsearch
+#todo: write tests
+    #temporary hardcode
 
 if __name__ == "__main__":
     main()

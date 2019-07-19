@@ -15,17 +15,22 @@ import json
 import pika
 
 
-def processJob(id, queryFile, dbFile, queryType):
+def createJob(id, queryFile, dbFile, queryType):
     jobAttributes = {"job_id": id, "query_filename": queryFile, "search_database": dbFile, "search_type": queryType}
     jobJsonString = json.dump(jobAttributes)
 
     connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
     channel = connection.channel()
-    channel.queue_declare(queue='jobhandlerqueue')
-    channel.basic_publish(exchange='', routing_key='jobhandlerqueue', body=jobJsonString)
+    #if(queryType == blast) thhen channel.queue.declare(queue=blastworkerqueue)
+    #if (queryType == image) thhen channel.queue.declare(queue=imageworkerqueue)
+    #switch statement w/ cases
+    channel.queue_declare(queue='blastworkerqueue')
+    channel.basic_publish(exchange='', routing_key='blastworkerqueue', body=jobJsonString)
 
 def main():
-
-
+#add hardcoded tests for blastworker, eg createjob(2, lkj.fasta, db.fasta, blastp)
+#create job object/class, pass directly to createjob
 if __name__ == "__main__":
     main()
+
+    #TODO: make database file that compiles list of job orders, then passes data to thia file (createJobb fxn)
