@@ -4,20 +4,14 @@ import os #system commands
 import logging #info logs, error logs, etc.
 import re #regex to search and download appropriate files
 from config import config as conf
-
+from common import functions as func
 
 # downloads from website to /home/zaz/biodadbb
 def download(siteHome, siteSubDir, logFile, dbFile, fileRegex):
-    logSetup(logFile)
+    func.logSetup(logFile, "datadownload")
     dbSetup(dbFile)
     ftpObject = ftpConnect(siteHome, siteSubDir)
     ftpDownload(siteHome, siteSubDir, dbFile, fileRegex, ftpObject)
-
-
-def logSetup(logFile):
-    if not os.path.isdir(f"{logFile}/datadownloadlogs"):
-        os.makedirs(f"{logFile}/datadownloadlogs")
-    logging.basicConfig(level=logging.INFO, filename=f'{logFile}/datadownloadlogs/{conf.currentTime}.log', filemode='a', format='%(asctime)s %(message)s')
 
 
 def dbSetup(dbFile):
