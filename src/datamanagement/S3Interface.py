@@ -2,19 +2,20 @@ import os
 import logging
 from time import gmtime, strftime
 from config import config as conf
-
+from common import functions as func
 currentTime = strftime("%Y-%m-%d:%H:%M:%S", gmtime())
 logFile = f'/tmp/bioda/logs/s3InterfaceLogs{currentTime}.log'
 dbFile = '/home/zaz/biodadb'
 
+func.logSetup(logFile, "S3Interface")
 logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='w', format='%(asctime)s %(message)s')
 
 
 # upload sync from local to s3 bucket
-def uploadSync(logFile, dbFile, bucketSubDir): #TODO: switch from conf.s3bucket to conf.s3bucket/ncbi/etc...
+def uploadSync(dbFile, bucketSubDir):
     try:
-        sync_command = f"aws s3 sync {dbFile} {conf.s3Bucket}/{bucketSubDir}"
-        logging.info(f"Starting S3 sync/upload from {dbFile} to {conf.s3Bucket}/{bucketSubDir}...")
+        sync_command = f"aws s3 sync {dbFile} {bucketSubDir}"
+        logging.info(f"Starting S3 sync/upload from {dbFile} to {bucketSubDir}...")
         os.system(sync_command)
         returnCode = os.system("echo $?")
         logging.info(f"The return code for S3 sync is {returnCode}")
@@ -28,16 +29,16 @@ def uploadSync(logFile, dbFile, bucketSubDir): #TODO: switch from conf.s3bucket 
         logging.info("End of sync")
 
 
-def downloadSync(logFile, dbFile, bucketSubDir):#TODO: add parameters
+def downloadSync(dbFile, bucketSubDir):
     try:
-        sync_command = f"aws s3 sync {conf.s3Bucket} {dbFile}"
-        logging.info(f"Starting S3 sync/download from {conf.s3Bucket} to {dbFile}...")
+        sync_command = f"aws s3 sync {bucketSubDir} {dbFile}"
+        logging.info(f"Starting S3 sync/download from {bucketSubDir} to {dbFile}...")
         os.system(sync_command)
         returnCode = os.system("echo $?")
         logging.info(f"The return code for S3 sync is {returnCode}")
         if not returnCode == 0:
             raise FileNotFoundError
-    except FileNotFoundError: #TODO: don't write logs into /tmp/bioda/logs/ncbi/10am, put into /tmp/bioda/logs/dataDownloadLogs/ncbi/10am, etc.as e:
+    except FileNotFoundError:
         logging.error("Exception has occurred", exc_info=True)
     else:
         logging.info("Sync has completed successfully")
@@ -48,18 +49,15 @@ def downloadSync(logFile, dbFile, bucketSubDir):#TODO: add parameters
 #this is a test to upload and download; later add
 def main():
         for item in conf.websiteList:
-            uploadSync(item['logFile'], item['dbFile'], item['bucketSubDir'])
-            downloadSync(item['logFile'], item['dbFile'], item['bucketSubDir'])
-#todo: finish writing tests
+            uploadSync(item['dbFile'], item['bucketSubDir'])
+            downloadSync(item['dbFile'], item['bucketSubDir'])
 
 if __name__ == "__main__":
     main()
 
 #s3Bucket = 's3://andrew-zhang-backup-bucket'
 #dbfile = /home/zaz/biodadb
-# Done: change regex from python ".endswit()" function to a real regex
-# TODO: don't write logs into /tmp/bioda/logs/ncbi/10am, put into /tmp/bioda/logs/S3InterfaceLogs/ncbi/10am, etc.
-#TODO: for item in conf.websiteLIst loop to sync each website dbfile with it's respective s3bucket subdirectory
+# Done: change regex from python ".endswit()" function to a real
 #TODO: move all variables to config, remove all hard coded variables INCLUDING log Files
 #TODO: simple queue service- start with rabbitmq for local msgqueue
 #TODO: know how to blast from cli write to file

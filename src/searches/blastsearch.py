@@ -1,12 +1,22 @@
 import os
 import logging
-
+from config import config as conf
 logFile = '/home/zaz/bioda/logs/batchBlastLog.log'
 blastResults = "/home/zaz/bioda/blastResults"
 
+def blastResultDirSetup():
+    if not os.path.isdir(blastResults):
+        os.makedirs(blastResults)
+
+def logSetup(logFile):
+    if not os.path.isdir(logFile):
+        os.makedirs(logFile)
+    logging.basicConfig(level=logging.INFO, filename=f"{logFile}/{conf.currentTime}.log", filemode='a', format='%(asctime)s %(message)s')
+
+
+
 
 #uses ncbi blastp cli to search multiple file
-logging.basicConfig(level=logging.INFO, filename=f'{logFile}', filemode='w', format='%(asctime)s %(message)s')
 def blastBatchSearch(list, searchtype, database, jobName): #list is list of files to search, searchType is "blastp",etc. dataBase
     #create jobName subdirectory
     #check for exception if folder already exists
@@ -32,7 +42,12 @@ def main():
 #todo:if single file, call blastsinglesearch
 #todo:else cal blastbatchsearch
 #todo: write tests
-    #temporary hardcode
+    #temporary hardcode in lines directly below
+    #TODO: create said files
+    logSetup(logFile)
+    blastResultDirSetup()
+    blastSingleSearch("/home/zaz/bioda/sample/blastsample.fa", "blastp", "/home/zaz/bioda/sample/blastsampledb.fa")
+    #blastBatchSearch(['blastbatch1.fasta','blastbatch2.fasta','blastbatch3.fasta'], "blastp", "blastdbex.fasta")
 
 if __name__ == "__main__":
     main()
